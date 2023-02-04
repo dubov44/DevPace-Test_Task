@@ -232,7 +232,7 @@ namespace DevPace.WPF.ViewModels
         private bool IsEmailValid(out string error)
         {
             error = "";
-            if (Email is not null && !new EmailAddressAttribute().IsValid(Email))
+            if (!string.IsNullOrWhiteSpace(Email) && !new EmailAddressAttribute().IsValid(Email))
             {
                 error = "invalid email format";
                 return false;

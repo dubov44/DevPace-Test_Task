@@ -20,16 +20,16 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-            <TextBlock Text="Name"/>
+            <TextBlock Text="Name" Margin="5 0 0 0"/>
             <TextBox Width="100" Text="{Binding NameFilter}"/>
 
-            <TextBlock Text="Company Name"/>
+            <TextBlock Text="Company Name" Margin="5 0 0 0"/>
             <TextBox Width="100" Text="{Binding CompanyNameFilter}"/>
 
-            <TextBlock Text="Email"/>
+            <TextBlock Text="Email" Margin="5 0 0 0"/>
             <TextBox Width="100" Text="{Binding EmailFilter}"/>
 
-            <TextBlock Text="Phone"/>
+            <TextBlock Text="Phone" Margin="5 0 0 0"/>
             <TextBox Width="100" Text="{Binding PhoneFilter}"/>
 
             <ComboBox Margin="5"  Width="100" SelectedItem="{Binding SortField}">
@@ -39,8 +39,8 @@
                 <enums:SortField>Phone</enums:SortField>
             </ComboBox>
 
-            <RadioButton GroupName="Direction" Content="Ascending" IsChecked="{Binding Ascending}" />
-            <RadioButton GroupName="Direction" Content="Descending"/>
+            <RadioButton GroupName="Direction" Content="Ascending" IsChecked="{Binding Ascending}" Margin="5 0 0 0"/>
+            <RadioButton GroupName="Direction" Content="Descending" Margin="5 0 0 0"/>
 
             <Button Content="Search" Command="{Binding SearchCommand}" Margin="5"/>
         </StackPanel>

@@ -27,8 +27,8 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="Name"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Name" Margin="0 0 5 0"/>
             <AdornerDecorator>
                 <TextBox Width="300">
                     <TextBox.Text>
@@ -41,8 +41,8 @@
                 </TextBox>
             </AdornerDecorator>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock Text="CompanyName"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="CompanyName" Margin="0 0 5 0"/>
             <AdornerDecorator>
                 <TextBox Width="300">
                     <TextBox.Text>
@@ -55,8 +55,8 @@
                 </TextBox>
             </AdornerDecorator>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock Text="Email"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Email" Margin="0 0 5 0"/>
             <AdornerDecorator>
                 <TextBox Width="300">
                     <TextBox.Text>
@@ -69,8 +69,8 @@
                 </TextBox>
             </AdornerDecorator>
         </StackPanel>
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <TextBlock Text="Phone"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="5">
+            <TextBlock Text="Phone" Margin="0 0 5 0"/>
             <AdornerDecorator>
                 <TextBox Width="300">
                     <TextBox.Text>
@@ -83,10 +83,10 @@
                 </TextBox>
             </AdornerDecorator>
         </StackPanel>
-        <StackPanel Grid.Row="4" Orientation="Horizontal">
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="5">
             <Button Content="Save" 
                     Command="{Binding SaveCustomerCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"></Button>
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Margin="0 0 5 0"></Button>
             <Button Content="Delete"
                     Command="{Binding DeleteCustomerCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"></Button>
