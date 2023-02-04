@@ -1,0 +1,17 @@
+﻿<Window x:Class="DevPace.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DevPace.WPF"
+        xmlns:views="clr-namespace:DevPace.WPF.Views"
+        xmlns:common="clr-namespace:DevPace.WPF.Common"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <views:CustomerListView Grid.Row="0"></views:CustomerListView>
+    </Grid>
+</Window>

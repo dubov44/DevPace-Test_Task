@@ -1,0 +1,18 @@
+﻿<Application x:Class="DevPace.WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewmodels="clr-namespace:DevPace.WPF.ViewModels"
+             xmlns:views="clr-namespace:DevPace.WPF.Views"
+             xmlns:local="clr-namespace:DevPace.WPF"
+             xmlns:common="clr-namespace:DevPace.WPF.Common">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries/>
+            <common:ViewModelProvider x:Key="ViewModelProvider"></common:ViewModelProvider>
+        </ResourceDictionary>
+
+         
+    </Application.Resources>
+
+</Application>
