@@ -8,7 +8,10 @@ namespace DevPace.EntityFramework
     {
         public DbSet<Customer> Customers { get; set; }
 
-        public DevPaceDbContext(DbContextOptions options) : base(options) { }
+        public DevPaceDbContext(DbContextOptions options) : base(options)
+        {
+            Database?.Migrate();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

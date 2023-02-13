@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.Domain", "DevPace.Domain\DevPace.Domain.csproj", "{633DE874-DA1A-4AF8-9DF8-97FBB5AD7608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPace.Domain", "DevPace.Domain\DevPace.Domain.csproj", "{633DE874-DA1A-4AF8-9DF8-97FBB5AD7608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.EntityFramework", "DevPace.EntityFramework\DevPace.EntityFramework.csproj", "{289305EC-FCB9-4FFA-8F54-F1D2CEBCF71F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPace.EntityFramework", "DevPace.EntityFramework\DevPace.EntityFramework.csproj", "{289305EC-FCB9-4FFA-8F54-F1D2CEBCF71F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.WPF", "DevPace.WPF\DevPace.WPF.csproj", "{32D49260-8C9C-47B3-94E9-BACB5715CBD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPace.WPF", "DevPace.WPF\DevPace.WPF.csproj", "{32D49260-8C9C-47B3-94E9-BACB5715CBD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.BusinessLogic", "DevPace.BusinessLogic\DevPace.BusinessLogic.csproj", "{50995F0E-9913-4DE5-8612-D6E252A87438}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPace.BusinessLogic", "DevPace.BusinessLogic\DevPace.BusinessLogic.csproj", "{50995F0E-9913-4DE5-8612-D6E252A87438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.Infrastructure", "DevPace.Infrastructure\DevPace.Infrastructure.csproj", "{17C55B67-551E-485C-BE0D-35D9B6D8B079}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPace.Infrastructure", "DevPace.Infrastructure\DevPace.Infrastructure.csproj", "{17C55B67-551E-485C-BE0D-35D9B6D8B079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.Shared", "DevPace.Shared\DevPace.Shared.csproj", "{9348E0E8-1259-48B7-83BC-CA27E04196F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevPace.Shared", "DevPace.Shared\DevPace.Shared.csproj", "{9348E0E8-1259-48B7-83BC-CA27E04196F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.WebApi", "DevPace.WebApi\DevPace.WebApi.csproj", "{F104CCE1-B539-498D-8D9A-0FFAEEA7BC59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.WebApi.Client", "DevPace.WebApi.Client\DevPace.WebApi.Client.csproj", "{F7447FEA-56AB-416B-9514-E52949FB6342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevPace.WebApi.Common", "DevPace.WebApi.Common\DevPace.WebApi.Common.csproj", "{0D9E4D4C-9B35-469C-BDE0-E890C4EA3343}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{9348E0E8-1259-48B7-83BC-CA27E04196F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9348E0E8-1259-48B7-83BC-CA27E04196F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9348E0E8-1259-48B7-83BC-CA27E04196F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F104CCE1-B539-498D-8D9A-0FFAEEA7BC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F104CCE1-B539-498D-8D9A-0FFAEEA7BC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F104CCE1-B539-498D-8D9A-0FFAEEA7BC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F104CCE1-B539-498D-8D9A-0FFAEEA7BC59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7447FEA-56AB-416B-9514-E52949FB6342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7447FEA-56AB-416B-9514-E52949FB6342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7447FEA-56AB-416B-9514-E52949FB6342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7447FEA-56AB-416B-9514-E52949FB6342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D9E4D4C-9B35-469C-BDE0-E890C4EA3343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9E4D4C-9B35-469C-BDE0-E890C4EA3343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9E4D4C-9B35-469C-BDE0-E890C4EA3343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9E4D4C-9B35-469C-BDE0-E890C4EA3343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

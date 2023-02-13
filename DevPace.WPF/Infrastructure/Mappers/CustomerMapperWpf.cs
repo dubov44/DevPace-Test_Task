@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DevPace.BusinessLogic.Dto.Customer;
+using DevPace.WebApi.Common.Models;
 using DevPace.WPF.Models.Customer;
 
 namespace DevPace.WPF.Infrastructure.Mappers
@@ -8,8 +8,8 @@ namespace DevPace.WPF.Infrastructure.Mappers
     {
         public CustomerMappersWpf()
         {
-            CreateMap<CustomerDto, CustomerModel>();
-            CreateMap<CustomerModel, CustomerDto>();
+            CreateMap<Customer, CustomerModel>();
+            CreateMap<CustomerModel, Customer>();
         }
     }
 }

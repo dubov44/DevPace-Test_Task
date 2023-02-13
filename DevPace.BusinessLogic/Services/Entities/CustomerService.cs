@@ -61,14 +61,7 @@ namespace DevPace.BusinessLogic.Services.Entities
 
         public async Task<bool> CheckForUniqueName(long? id, string name)
         {
-            var customers = await _dataService.GetAllAsync();
-
-            if (customers.Any(c => c.Name.Equals(name) && !c.Id.Equals(id)))
-            {
-                return false;
-            }
-
-            return true;
+            return await _customerDataService.CheckForUniqueName(id, name);
         }
 
         private async Task<CustomerDto> CreateAsync(CustomerDto entity)

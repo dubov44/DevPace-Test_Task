@@ -2,20 +2,21 @@
 using System.Threading.Tasks;
 using System.Windows;
 using AutoMapper;
-using DevPace.BusinessLogic.Dto.Customer;
-using DevPace.BusinessLogic.Services.Interfaces;
 using DevPace.WPF.Common;
 using DevPace.WPF.Models.Customer;
 using DevPace.WPF.ViewModels.Base;
 using Microsoft.VisualStudio.Threading;
 using DevPace.WPF.Commands;
 using System.ComponentModel.DataAnnotations;
+using DevPace.WebApi.Client.HttpServices.Interfaces;
+using DevPace.WebApi.Common.Models;
+using DevPace.WebApi.Common.Models.Validation;
 
 namespace DevPace.WPF.ViewModels
 {
     public class CustomerDetailsViewModel : ViewModelBase, IDataErrorInfo
     {
-        private readonly ICustomerService _customerService;
+        private readonly ICustomerHttpService _customerService;
 
         private readonly IMapper _mapper;
 
@@ -99,7 +100,7 @@ namespace DevPace.WPF.ViewModels
         public AsyncCommand<Window> DeleteCustomerCommand { get; set; }
 
         public CustomerDetailsViewModel(
-            ICustomerService customerService,
+            ICustomerHttpService customerService,
             DynamicParameters dynamicParameters,
             IMapper mapper)
         {
@@ -160,13 +161,18 @@ namespace DevPace.WPF.ViewModels
 
         private async Task CheckNameUnique()
         {
-            IsNameUnique = await _customerService.CheckForUniqueName(_id, Name);
+            var validationModel = new CustomerNameValidationModel()
+            {
+                Id = _id,
+                Name = this.Name
+            };
+            IsNameUnique = await _customerService.CheckForUniqueName(validationModel);
             OnPropertyChanged(nameof(Name));
         }
 
         private async Task SaveCustomer(Window window)
         {
-            CustomerDto customer = new CustomerDto
+            Customer customer = new Customer
             {
                 Id = _id,
                 Name = Name,

@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DevPace.BusinessLogic\DevPace.BusinessLogic.csproj" />
     <ProjectReference Include="..\DevPace.Infrastructure\DevPace.Infrastructure.csproj" />
     <ProjectReference Include="..\DevPace.Shared\DevPace.Shared.csproj" />
+    <ProjectReference Include="..\DevPace.WebApi.Client\DevPace.WebApi.Client.csproj" />
   </ItemGroup>
 
 </Project>

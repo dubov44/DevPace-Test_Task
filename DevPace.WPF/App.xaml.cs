@@ -4,6 +4,7 @@ using DevPace.WPF.DependencyProvider;
 using Microsoft.Extensions.DependencyInjection;
 using DevPace.Infrastructure;
 using DevPace.WPF.Infrastructure.Configurations;
+using System.Configuration;
 
 namespace DevPace.WPF
 {
@@ -15,10 +16,9 @@ namespace DevPace.WPF
         public App()
         {
             IServiceCollection services = new ServiceCollection();
-
-            services.DataAccessServicesConfiguration();
-            services.BusinessLogicServicesConfiguration();
+            
             services.WPFServicesConfiguration();
+            services.ApiServicesConfiguration(ConfigurationSettings.AppSettings.Get("baseAddress"));
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

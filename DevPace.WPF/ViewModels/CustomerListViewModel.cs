@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
 using AutoMapper;
-using DevPace.BusinessLogic.Dto.Customer;
-using DevPace.BusinessLogic.Services.Interfaces;
 using DevPace.Shared.Enums;
+using DevPace.WebApi.Client.HttpServices.Interfaces;
+using DevPace.WebApi.Common.Models;
 using DevPace.WPF.Commands;
 using DevPace.WPF.Common;
 using DevPace.WPF.Models.Customer;
@@ -19,15 +19,13 @@ namespace DevPace.WPF.ViewModels
     public class CustomerListViewModel : ViewModelBase
 
     {
-        private readonly ICustomerService _customerService;
-
         private readonly IMapper _mapper;
-        
+
+        private readonly ICustomerHttpService _customerService;
+
         private DynamicParameters _dynamicParameters;
 
         private int _totalCustomers;
-
-        private int _recordsStartFrom = 0;
 
         #region Commands
 
@@ -273,7 +271,7 @@ namespace DevPace.WPF.ViewModels
         #endregion
 
         public CustomerListViewModel(
-            ICustomerService customerService,
+            ICustomerHttpService customerService,
             DynamicParameters dynamicParameters,
             IMapper mapper)
         {
@@ -307,7 +305,7 @@ namespace DevPace.WPF.ViewModels
 
         private async Task RefreshAsync()
         {
-            CustomerFilteredDto filter = new CustomerFilteredDto
+            CustomerFiltered filter = new CustomerFiltered
             {
                 Name = NameFilter,
                 CompanyName = CompanyNameFilter,
@@ -318,13 +316,13 @@ namespace DevPace.WPF.ViewModels
                 Skip = SelectedRecord * (CurrentPage - 1),
                 Take = SelectedRecord
             };
-            var customerList = await _customerService.GetAllFilteredAsync(filter);
-            _totalCustomers = customerList.Item2;
+            var customerList = await _customerService.GetCustomers(filter);
+            _totalCustomers = customerList.Count;
 
             NumberOfPages = (int)Math.Ceiling((double)_totalCustomers / SelectedRecord);
             NumberOfPages = NumberOfPages == 0 ? 1 : NumberOfPages;
 
-            CustomerList = new ObservableCollection<CustomerModel>(_mapper.Map<IEnumerable<CustomerModel>>(customerList.Item1));
+            CustomerList = new ObservableCollection<CustomerModel>(_mapper.Map<IEnumerable<CustomerModel>>(customerList.Customers));
         }
 
         private void UpdateEnableState()

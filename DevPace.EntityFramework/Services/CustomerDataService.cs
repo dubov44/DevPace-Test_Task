@@ -28,6 +28,18 @@ namespace DevPace.EntityFramework.Services
             return new Tuple<IEnumerable<Customer>, int>(customers, overallCount);
         }
 
+        public async Task<bool> CheckForUniqueName(long? id, string name)
+        {
+            await using DevPaceDbContext context = _contextFactory.CreateDbContext();
+
+            if (context.Set<Customer>().Any(c => c.Name != null && c.Name.Equals(name) && !c.Id.Equals(id)))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private SqlParametersHelper SetSqlParameters(CustomerSearch filteredCustomer)
         {
             SqlParametersHelper helper = new SqlParametersHelper
